@@ -16,13 +16,10 @@ public class CompletePlayerController : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
-		// float invertMoveHorizontal = -(Input.GetAxis ("Horizontal"));
-		// float invertMoveVertical = -(Input.GetAxis ("Vertical"));
+		rb2d.velocity = new Vector2 (moveHorizontal * speed, moveVertical * speed);
 
 		Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-		// Vector2 invertMovement = new Vector2 (invertMoveHorizontal, invertMoveVertical);
-		rb2d.AddForce ((movement * 2) * speed);
-		// rb2d.AddForce (invertMovement * speed);
+		rb2d.AddForce (movement * speed);
 	}
 
 }
