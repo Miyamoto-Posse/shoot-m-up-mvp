@@ -1,16 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 public class PlayerController : MonoBehaviour {
-
 	Vector2 pos;
 	public float speed;
-	// Use this for initialization
 	void Start () {
 		pos = transform.position;
 	}
-
-	// Update is called once per frame
 	void Update () {
 		bool WKey = Input.GetKey(KeyCode.W);
 		bool AKey = Input.GetKey(KeyCode.A);
@@ -19,7 +14,6 @@ public class PlayerController : MonoBehaviour {
 		updatePosition(WKey, AKey, SKey, DKey);
 		gameObject.transform.position = pos;
 	}
-
 	void updatePosition (bool WKey, bool AKey, bool SKey, bool DKey) {
 		if (WKey) {
 			pos.y += (0.1f * speed);
